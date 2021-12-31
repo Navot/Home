@@ -13,7 +13,7 @@ public class createBets {
     private static boolean toPrint = false;
 
     public static void main(String[] args) throws Exception {
-        String roundDir = "C:\\Users\\navot\\IdeaProjects\\Home\\fullData\\04_28_133913";
+        String roundDir = "fullData\\04_28_133913";
        // Normalize.normalizeData(roundDir);
         List<Game> gameList = selectGameList(roundDir);
         generateBets(roundDir, gameList);

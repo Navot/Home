@@ -17,19 +17,22 @@ public class GetRates {
     static boolean screenShotsDirCreated;
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\navot\\IdeaProjects\\Home\\chromedriver_win32\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "chromedriver/chromedriver");
         screenShotsDirCreated = false;  //makeScreenShotsDir(dateAndTime);
-        Utils.makeDir("fullData\\" + dateAndTime);
+        Utils.makeDir("fullData/" + dateAndTime);
 
         Thread betwayThread = new Thread(new Betway(dateAndTime));
         betwayThread .start();
+        System.out.println("--------------------------------Starting "+betwayThread.getName() +"------------------------------------");
+
+        betwayThread.join();
 
         System.out.println("--------------------------------------------------------------------");
 
-       Thread williamHillThread = new Thread(new WilliamHill(dateAndTime));
-       williamHillThread.start();
+    //    Thread williamHillThread = new Thread(new WilliamHill(dateAndTime));
+    //    williamHillThread.start();
 
-        System.out.println("------------------------------Done Getting Raw Data----------------------------------");
+    //     System.out.println("------------------------------Done Getting Raw Data----------------------------------");
     }
 
 

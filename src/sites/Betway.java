@@ -24,9 +24,9 @@ public class Betway extends Site {
     protected void getRates() {
 
         doLeague("https://sports.betway.com/en/sports/grp/soccer/england/premier-league");
-        doLeague("https://sports.betway.com/en/sports/grp/soccer/germany/bundesliga");
-        doLeague("https://sports.betway.com/en/sports/grp/soccer/spain/la-liga");
-        doLeague("https://sports.betway.com/en/sports/grp/soccer/italy/serie-a");
+        // doLeague("https://sports.betway.com/en/sports/grp/soccer/germany/bundesliga");
+        // doLeague("https://sports.betway.com/en/sports/grp/soccer/spain/la-liga");
+        // doLeague("https://sports.betway.com/en/sports/grp/soccer/italy/serie-a");
 //        doLeague("https://sports.betway.com/en/sports/grp/soccer/france/ligue-1");
 //        doLeague("https://sports.betway.com/en/sports/grp/soccer/netherlands/eerste-divisie");
 //        doLeague("https://sports.betway.com/en/sports/grp/soccer/russia/premier-league");
@@ -40,11 +40,6 @@ public class Betway extends Site {
     protected void initSite() {
         driver = new ChromeDriver();
         driver.get("https://sports.betway.com/en/sports/grp/soccer/england/premier-league");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         try {
             driver.findElement(By.xpath("//div[@class='closeButton icon-cross']")).click();
         }catch (Exception e){

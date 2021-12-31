@@ -116,7 +116,7 @@ public class Utils {
                 theDir.mkdir();
                 result = true;
             } catch (SecurityException se) {
-                //handle it
+                // handle it
                 se.printStackTrace();
             }
             if (result) {
@@ -126,6 +126,16 @@ public class Utils {
         return result;
     }
 
+    public static boolean sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
     public static List<Game> sortGameList(List<Game> gameList) {
         List<Game> tempGameList = gameList;
 
@@ -133,9 +143,12 @@ public class Utils {
 
             @Override
             public int compare(Game game1, Game game2) {
-                if (game1.homeRate > game2.homeRate) return 1;
-                if (game1.homeRate < game2.homeRate) return -1;
-                else return 0;
+                if (game1.homeRate > game2.homeRate)
+                    return 1;
+                if (game1.homeRate < game2.homeRate)
+                    return -1;
+                else
+                    return 0;
             }
         });
 

@@ -17,7 +17,7 @@ public class GetResults {
 
     public static void main(String[] args) throws IOException {
         List<Game> gameList;
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\navot\\IdeaProjects\\Home\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver/chromedriver");
         gameList = readGameCSV("C:\\Users\\navot\\IdeaProjects\\Home\\data\\20170407_131404.csv");
         driver = new ChromeDriver();
         for (Game game : gameList) {
